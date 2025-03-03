@@ -8,7 +8,7 @@ using B12.Application.Command.Category.Update;
 using B12.Application.Query.Category.GetAllCategories;
 using B12.Application.Query.Category.GetById;
 using B12.Domain.AggregateModels.CategoryAggregate;
-
+using B12.Infrastructure;
 using MediatR;
 
 using Microsoft.AspNetCore.Mvc;
@@ -33,7 +33,7 @@ public class CategoryController : BaseController
     [HttpPost("create")]
     public async Task<IActionResult> CreateCategoryAsync(CreateCategoryRequest request)
     {
-        var createCategoryCommand = Mapper.Map<CreateTagCommand>(request);
+        var createCategoryCommand = Mapper.Map<CreateCategoryCommand>(request);
 
         var response = await Mediator.Send(createCategoryCommand);
 

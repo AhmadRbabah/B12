@@ -15,6 +15,7 @@ public class CreateTagCommandHandler : IRequestHandler<CreateTagCommand, TagResp
 {
     private readonly IMapper _mapper;
     private readonly ITagRepository _tagRepository;
+    // private readonly IUnitOfWork _unitOfWork;
 
     public CreateTagCommandHandler(IMapper mapper, ITagRepository tagRepository)
     {
@@ -31,7 +32,6 @@ public class CreateTagCommandHandler : IRequestHandler<CreateTagCommand, TagResp
         }
 
         var tag = Tag.New(request);
-
         await _tagRepository.AddAsync(tag);
         await _tagRepository.SaveChangesAsync();
 

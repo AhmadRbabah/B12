@@ -7,7 +7,7 @@ public class Tag
 {
     private readonly IReadOnlyCollection<ProductTag> _productTags;
 
-    public Tag()
+    private Tag()
     {
         _productTags = new List<ProductTag>();
     }

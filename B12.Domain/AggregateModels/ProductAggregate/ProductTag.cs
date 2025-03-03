@@ -4,6 +4,10 @@ using B12.Domain.AggregateModels.TagAggregate;
 
 public class ProductTag
 {
+    private ProductTag()
+    {
+    }
+
     public Guid ProductId { get; private set; }
     public Product Product { get; private set; }
 

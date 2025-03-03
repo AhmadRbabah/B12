@@ -10,7 +10,7 @@ public class CategoryProfile : Profile
 {
     public CategoryProfile()
     {
-        CreateMap<CreateCategoryRequest, CreateTagCommand>();
+        CreateMap<CreateCategoryRequest, CreateCategoryCommand>();
         CreateMap<UpdateCategoryRequest, UpdateCategoryCommand>();
     }
 }

@@ -49,7 +49,8 @@ public class ProductRepository : IProductRepository
             .Include(product => product.ProductTags)
                 .ThenInclude(pt => pt.Tag)
             .Where(product => !product.IsDeleted)
-            .AsQueryable();
+            .AsQueryable()
+            .AsNoTracking();
     }
 
     public async Task SaveChangesAsync()

@@ -11,7 +11,7 @@ using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
 
-public class CreateTagCommandHandler : IRequestHandler<CreateTagCommand, CategoryResponse>
+public class CreateTagCommandHandler : IRequestHandler<CreateCategoryCommand, CategoryResponse>
 {
     private readonly IMapper _mapper;
     private readonly ICategoryRepository _categoryRepository;
@@ -22,7 +22,7 @@ public class CreateTagCommandHandler : IRequestHandler<CreateTagCommand, Categor
         _categoryRepository = categoryRepository;
     }
 
-    public async Task<CategoryResponse> Handle(CreateTagCommand request, CancellationToken cancellationToken)
+    public async Task<CategoryResponse> Handle(CreateCategoryCommand request, CancellationToken cancellationToken)
     {
         var isCategoryUnique = await _categoryRepository.IsUnique(request.Name);
         if (!isCategoryUnique)

@@ -7,7 +7,7 @@ public class Category
 {
     private readonly IReadOnlyCollection<Product> _products;
 
-    public Category()
+    private Category()
     {
         _products = new List<Product>();
     }
@@ -17,7 +17,7 @@ public class Category
     public string Description { get; private set; }
     public bool IsDeleted { get; private set; }
 
-    public IReadOnlyCollection<Product> Products => _products;
+    public IReadOnlyCollection<Product> Products { get; set; } //if the Product wasn't a read only collection, I will be able to clear any products I want by only reaching out the Category, which is wrong
 
     public string CreatedBy { get; private set; }
     public DateTime CreatedDate { get; private set; }

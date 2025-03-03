@@ -1,4 +1,5 @@
 using B12.Application.DI;
+
 using B12.Infrastructure.DI;
 using B12.Api.MappingProfile;
 
